@@ -2,4 +2,4 @@
 
 This is a head-to-head evaluation of six password managers. The code and most of the content was borrowed from a [Medium post by Jonathan Kamens of Quantopian Security](https://medium.com/@QuantopianCyber/head-to-head-evaluation-of-five-password-managers-8faa4851c767).
 
-Styles and headings added by me.
+Styles were added by me.
