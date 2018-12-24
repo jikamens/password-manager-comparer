@@ -4,7 +4,7 @@
 
 This is a head-to-head evaluation of six password managers with a focus on enterprise needs and priorities.
 
-The code and data were forked from a [Medium post by Jonathan Kamens of Quantopian Inc.](https://medium.com/@QuantopianCyber/head-to-head-evaluation-of-five-password-managers-8faa4851c767)
+The code and data were taken from the [Medium post by Jonathan Kamens of Quantopian Inc.](https://medium.com/@QuantopianCyber/head-to-head-evaluation-of-five-password-managers-8faa4851c767)
 
 ## Copyright
 
