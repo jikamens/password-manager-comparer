@@ -203,7 +203,7 @@ function formatTable() {
     t += featureList;
     t += "<p class='compare'><b>Add a comparison:</b> Compare ";
     t += "<select id='compare1' onchange='changeTable()'>\n";
-    t += "<option value=''>(select)</option>\n";
+    t += "<option value=''></option>\n";
     for (var i = 0; i < products.length; i++) {
         if (products[i] == compare2) continue;
         t += "<option value='" + products[i] + "'";
@@ -213,7 +213,7 @@ function formatTable() {
     t += "</select>\n";
     t += " to ";
     t += "<select id='compare2' onchange='changeTable()'>\n";
-    t += "<option value=''>(select)</option>\n";
+    t += "<option value=''></option>\n";
     for (var i = 0; i < products.length; i++) {
         if (products[i] == compare1) continue;
         t += "<option value='" + products[i] + "'";
