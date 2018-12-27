@@ -13,77 +13,73 @@
 // the original, published version of the grid for the benefit of other readers.
 
 var rawData = [
-    ["Feature",                                                         "Tags",                              ["1Password", "Dashlane", "Bitwarden", "LastPass", "Keeper",  "Zoho Vault"],  "CompareFunction"],
-    ["Chrome support",                                                  ["Chrome"],                          ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
-    ["Firefox support",                                                 ["Firefox"],                         ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
-    ["Edge support",                                                    ["Edge", "Windows"],                 ["yes",       "yes",      "yes",       "yes",      "yes",     "no"],          null],
-    ["Safari support",                                                  ["Safari", "MacOS"],                 ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
-    ["MacOS support",                                                  ["MacOS"],                           ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
-    ["Windows support",                                                 ["Windows"],                         ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
-    ["Linux support",                                                   ["Linux"],                           ["poor",      "poor",     "yes",       "yes",      "yes",     "yes"],         null],
-    ["MacOS command-line client",                                      ["MacOS", "CLI"],                    ["poor",      "no",       "yes",       "poor",     "yes",     "no"],          null],
-    ["Windows command-line client",                                     ["Windows", "CLI"],                  ["poor",      "no",       "yes",       "poor",     "yes",     "no"],          null],
-    ["Linux command-line client",                                       ["Linux", "CLI"],                    ["poor",      "no",       "yes",       "poor",     "yes",     "no"],          null],
-    ["Android support, including auto-fill",                            ["Android"],                         ["yes",       "yes",      "yes",       "yes",      "yes",     "poor"],        null],
-    ["Android auto-fill in Chrome",                                     ["Android"],                         ["yes",       "yes",      "yes",       "yes",      "yes",     "no"],          null],
-    ["Auto-fill in Android work profile",                               ["Android", "Enterprise"],           ["yes",       "yes",      "no",        "yes",      "yes",     "yes"],         null],
-    ["Android auto-fill shows full usernames",                          ["Android"],                         ["yes",       "yes",      "yes",       "yes",      "no",      "no"],          null],
-    ["iOS support, including auto-fill",                                ["iOS"],                             ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
-    ["Two-factor authentication",                                       [],                                  ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
-    ["YubiKey support in browser (Enterprise)",                         ["Enterprise", "YubiKey"],           ["no",        "no",       "yes",       "yes",      "yes",     "no"],          null],
-    ["YubiKey support in browser (Personal)",                           ["Personal", "YubiKey"],             ["no",        "no",       "yes",       "yes",      "yes",     "no"],          null],
-    ["YubiKey support in Android",                                      ["Android", "YubiKey"],              ["no",        "no",       "yes",       "yes",      "no",      "no"],          null],
-    ["YubiKey support in iOS",                                          ["iOS", "YubiKey"],                  ["no",        "no",       "yes",       "yes",      "no",      "no"],          null],
-    ["Saved password in Android",                                       ["Android"],                         ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
-    ["Saved password in iOS",                                           ["iOS"],                             ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
-    ["Fingerprint login in Android",                                    ["Android"],                         ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
-    ["Fingerprint login in iOS",                                        ["iOS"],                             ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
-    ["Synchronization across devices",                                  [],                                  ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
-    ["Import from LastPass",                                            ["LastPassMigration"],               ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
-    ["LastPass import distinguishes work from personal items",          ["LastPassMigration", "Enterprise"], ["no",        "no",       "no",        "yes",      "no",      "no"],          null],
-    ["Preserves LastPass folders in some way when importing",           ["LastPassMigration"],               ["yes",       "doubtful", "yes",       "yes",      "yes",     "yes"],         null],
-    ["Personal linked account support (or the equivalent)",             ["Enterprise"],                      ["yes",       "poor",     "yes",       "yes",      "no",      "no"],          null],
-    ["Save location (personal vs. work) specified at creation time",    ["Enterprise"],                      ["yes",       "no",       "yes",       "yes",      "no",      "no"],          null],
-    ["Save location (folder / collection / space) editable in web app", [],                                  ["yes",       "no",       "yes",       "yes",      "yes",     "yes"],         null],
-    ["Sensible password quality checks for master password",            [],                                  ["yes",       "no",       "yes",       "yes",      "yes",     "yes"],         null],
-    ["Password history on Linux",                                       ["Linux"],                           ["yes",       "no",       "yes",       "yes",      "yes",     "yes"],         null],
-    ["Password history on Windows",                                     ["Windows"],                         ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
-    ["Password history on MacOS",                                      ["MacOS"],                           ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
-    ["Secure notes",                                                    [],                                  ["yes",       "yes",      "yes",       "yes",      "yes",     "poor"],        null],
-    ["Attachments on notes on Linux",                                   ["Linux"],                           ["no",        "no",       "yes",       "yes",      "yes",     "yes"],         null],
-    ["Attachments on notes on Windows",                                 ["Windows"],                         ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
-    ["Attachments on notes on MacOS",                                  ["MacOS"],                           ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
-    ["Shared folders with access control on Linux",                     ["Linux", "Enterprise"],             ["yes",       "no",       "yes",       "yes",      "yes",     "yes"],         null],
-    ["Shared folders with access control on Windows",                   ["Windows", "Enterprise"],           ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
-    ["Shared folders with access control on MacOS",                    ["MacOS", "Enterprise"],             ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
-    ["Items can exist in multiple groups with distinct access control", ["Enterprise"],                      ["no",        "no",       "yes",       "no",       "yes",     "yes"],         null],
-    ["Nested folders",                                                  [],                                  ["no",        "no",       "yes",       "yes",      "yes",     "poor"],        null],
-    ["Resists auto-filling invisible forms",                            [],                                  ["yes",       "yes",      "yes",       "no",       "yes",     "unknown"],     null],
-    ["Browser plugin only fills selected form",                         [],                                  ["no",        "unknown",  "no",        "no",       "unknown", "yes"],         null],
-    ["Browser plugin displays icon in form fields",                     [],                                  ["yes",       "yes",      "no",        "yes",      "yes",     "yes"],         null],
-    ["Browser plugin prompts to save new sites on Linux",               ["Linux"],                           ["no",        "yes",      "yes",       "yes",      "yes",     "yes"],         null],
-    ["Browser plugin prompts to save new sites on Windows",             ["Windows"],                         ["unknown",   "yes",      "yes",       "yes",      "yes",     "yes"],         null],
-    ["Browser plugin prompts to save new sites on MacOS",              ["MacOS"],                           ["unknown",   "yes",      "yes",       "yes",      "yes",     "yes"],         null],
-    ["2FA integrated into login entries in vault",                      [],                                  ["no",        "no",       "yes",       "no",       "no",      "no"],          null],
-    ["Auto-fill in browser disabled by default",                        [],                                  ["yes",       "no",       "yes",       "no",       "no",      "yes"],         null],
-    ["Auto-fill in browser can be disabled by preference",              [],                                  ["yes",       "no",       "yes",       "yes",      "yes",     "yes"],         null],
-    ["Admins can reset passwords",                                      ["Enterprise"],                      ["yes",       "yes",      "no",        "yes",      "no",      "no"],          null],
-    ["Admins can access other people's unshared credentials",           ["Enterprise"],                      ["yes",       "no",       "no",        "yes",      "yes",     "no"],          null],
-    ["Admins can reset other people's 2FA",                             ["Enterprise"],                      ["yes",       "no",       "no",        "yes",      "no",      "yes"],         null],
-    ["2FA can be enforced at the organization level",                   ["Enterprise"],                      ["no",        "no",       "no",        "yes",      "yes",     "yes"],         null],
-    ["2FA can be audited at the organization level",                    ["Enterprise"],                      ["yes",       "no",       "yes",       "yes",      "yes",     "no"],          null],
-    ["Exporting items on Linux",                                        ["Linux"],                           ["no",        "no",       "yes",       "yes",      "yes",     "yes"],         null],
-    ["Exporting items on Windows",                                      ["Windows"],                         ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
-    ["Exporting items on MacOS",                                       ["MacOS"],                           ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
-    ["Export includes attachments",                                     [],                                  ["unknown",   "unknown",  "no",        "no",       "no",      "no"],          null],
-    ["Responsive to bug reports and feature requests",                  [],                                  ["no",        "unknown",  "yes",       "no",       "no",      "unknown"],     null],
-    ["Open source",                                                     [],                                  ["no",        "no",       "yes",       "no",       "no",      "no"],          null],
-    ["Option to self-host",                                             ["SelfHosting"],                     ["poor",      "no",       "yes",       "no",       "no",      "no"],          null],
-    ["Enterprise price per user per month",                             ["Enterprise"],                      [7.99,        4.00,       3.00,        6.00,       3.75,      3.60],          priceCompare],
-    ["Personal price per user per month (no Attachments or YubiKey)",   ["Personal"],                        [2.99,        4.99,       0.00,        2.00,       2.50,      0],             priceCompare],
-    ["Personal price per user per month (with Attachments & YubiKey)",     ["Personal"],                        [2.99,        4.99,       0.84,        2.00,       2.50,      0],             priceCompare],
-    ["Has a useful status page that can be subscribed to",              [],                                  ["yes",       "yes",      "no",        "yes",      "no",      "yes"],         null],
-    ["Number of outages in the past six months",                        [],                                  [1,           12,         0,           12,         0,         2],             priceCompare],
+    ["Feature",                                                          "Tags",                              ["1Password", "Dashlane", "Bitwarden", "LastPass", "Keeper",  "Zoho Vault"],  "CompareFunction"],
+    ["Chrome support",                                                   ["Chrome"],                          ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
+    ["Firefox support",                                                  ["Firefox"],                         ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
+    ["Edge support",                                                     ["Edge", "Windows"],                 ["yes",       "yes",      "yes",       "yes",      "yes",     "no"],          null],
+    ["Safari support",                                                   ["Safari", "MacOS"],                 ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
+    ["Mac OS, Windows support",                                          ["OR", "MacOS", "Windows"],          ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
+    ["Linux support",                                                    ["Linux"],                           ["poor",      "poor",     "yes",       "yes",      "yes",     "yes"],         null],
+    ["Mac OS command-line client",                                       ["MacOS", "CLI"],                    ["poor",      "no",       "yes",       "poor",     "yes",     "no"],          null],
+    ["Windows command-line client",                                      ["Windows", "CLI"],                  ["poor",      "no",       "yes",       "poor",     "yes",     "no"],          null],
+    ["Linux command-line client",                                        ["Linux", "CLI"],                    ["poor",      "no",       "yes",       "poor",     "yes",     "no"],          null],
+    ["Android support, including auto-fill",                             ["Android"],                         ["yes",       "yes",      "yes",       "yes",      "yes",     "poor"],        null],
+    ["Android auto-fill in Chrome",                                      ["Android"],                         ["yes",       "yes",      "yes",       "yes",      "yes",     "no"],          null],
+    ["Auto-fill in Android work profile",                                ["Android", "Enterprise"],           ["yes",       "yes",      "no",        "yes",      "yes",     "yes"],         null],
+    ["Android auto-fill shows full usernames",                           ["Android"],                         ["yes",       "yes",      "yes",       "yes",      "no",      "no"],          null],
+    ["iOS support, including auto-fill",                                 ["iOS"],                             ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
+    ["Two-factor authentication",                                        [],                                  ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
+    ["YubiKey support in browser (Enterprise)",                          ["Enterprise", "YubiKey"],           ["no",        "no",       "yes",       "yes",      "yes",     "no"],          null],
+    ["YubiKey support in browser (Personal)",                            ["Personal", "YubiKey"],             ["no",        "no",       "yes",       "yes",      "yes",     "no"],          null],
+    ["YubiKey support in Android",                                       ["Android", "YubiKey"],              ["no",        "no",       "yes",       "yes",      "no",      "no"],          null],
+    ["YubiKey support in iOS",                                           ["iOS", "YubiKey"],                  ["no",        "no",       "yes",       "yes",      "no",      "no"],          null],
+    ["Saved password in Android, iOS",                                   ["OR", "Android", "iOS"],            ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
+    ["Fingerprint login in Android, iOS",                                ["OR", "Android", "iOS"],            ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
+    ["Synchronization across devices",                                   [],                                  ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
+    ["Import from LastPass",                                             ["LastPassMigration"],               ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
+    ["LastPass import distinguishes work from personal items",           ["LastPassMigration", "Enterprise"], ["no",        "no",       "no",        "yes",      "no",      "no"],          null],
+    ["Preserves LastPass folders in some way when importing",            ["LastPassMigration"],               ["yes",       "doubtful", "yes",       "yes",      "yes",     "yes"],         null],
+    ["Personal linked account support (or the equivalent)",              ["Enterprise"],                      ["yes",       "poor",     "yes",       "yes",      "no",      "no"],          null],
+    ["Save location (personal vs. work) specified at creation time",     ["Enterprise"],                      ["yes",       "no",       "yes",       "yes",      "no",      "no"],          null],
+    ["Save location (folder / collection / space) editable in web app",  [],                                  ["yes",       "no",       "yes",       "yes",      "yes",     "yes"],         null],
+    ["Sensible password quality checks for master password",             [],                                  ["yes",       "no",       "yes",       "yes",      "yes",     "yes"],         null],
+    ["Password history on Linux",                                        ["Linux"],                           ["yes",       "no",       "yes",       "yes",      "yes",     "yes"],         null],
+    ["Password history on Windows, Mac OS",                              ["OR", "Windows", "MacOS"],          ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
+    ["Secure notes",                                                     [],                                  ["yes",       "yes",      "yes",       "yes",      "yes",     "poor"],        null],
+    ["Attachments on notes on Linux",                                    ["Linux"],                           ["no",        "no",       "yes",       "yes",      "yes",     "yes"],         null],
+    ["Attachments on notes on Windows, Mac OS",                          ["OR", "Windows", "MacOS"],          ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
+    ["Shared folders with access control on Linux",                      ["Linux", "Enterprise"],             ["yes",       "no",       "yes",       "yes",      "yes",     "yes"],         null],
+    ["Shared folders with access control on Windows",                    ["Windows", "Enterprise"],           ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
+    ["Shared folders with access control on Mac OS",                     ["MacOS", "Enterprise"],             ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
+    ["Items can exist in multiple groups with distinct access control",  ["Enterprise"],                      ["no",        "no",       "yes",       "no",       "yes",     "yes"],         null],
+    ["Nested folders",                                                   [],                                  ["no",        "no",       "yes",       "yes",      "yes",     "poor"],        null],
+    ["Resists auto-filling invisible forms",                             [],                                  ["yes",       "yes",      "yes",       "no",       "yes",     "unknown"],     null],
+    ["Browser plugin only fills selected form",                          [],                                  ["no",        "unknown",  "no",        "no",       "unknown", "yes"],         null],
+    ["Browser plugin displays icon in form fields",                      [],                                  ["yes",       "yes",      "no",        "yes",      "yes",     "yes"],         null],
+    ["Browser plugin prompts to save new sites on Linux",                ["Linux"],                           ["no",        "yes",      "yes",       "yes",      "yes",     "yes"],         null],
+    ["Browser plugin prompts to save new sites on Windows, Mac OS",      ["OR", "Windows", "MacOS"],          ["unknown",   "yes",      "yes",       "yes",      "yes",     "yes"],         null],
+    ["2FA integrated into login entries in vault (Mac OS, Windows, iOS, Android)", ["OR", "MacOS", "Windows", "iOS", "Android"], ["yes", "no", "yes", "no",      "no",      "no"],          null],
+    ["2FA integrated into login entries in vault (Linux)",               [],                                  ["no",        "no",       "yes",       "no",       "no",      "no"],          null],
+    ["Auto-fill in browser disabled by default",                         [],                                  ["yes",       "no",       "yes",       "no",       "no",      "yes"],         null],
+    ["Auto-fill in browser can be disabled by preference",               [],                                  ["yes",       "no",       "yes",       "yes",      "yes",     "yes"],         null],
+    ["Admins can reset passwords",                                       ["Enterprise"],                      ["yes",       "yes",      "no",        "yes",      "no",      "no"],          null],
+    ["Admins can access other people's unshared credentials",            ["Enterprise"],                      ["yes",       "no",       "no",        "yes",      "yes",     "no"],          null],
+    ["Admins can reset other people's 2FA",                              ["Enterprise"],                      ["yes",       "no",       "no",        "yes",      "no",      "yes"],         null],
+    ["2FA can be enforced at the organization level",                    ["Enterprise"],                      ["no",        "no",       "no",        "yes",      "yes",     "yes"],         null],
+    ["2FA can be audited at the organization level",                     ["Enterprise"],                      ["yes",       "no",       "yes",       "yes",      "yes",     "no"],          null],
+    ["Exporting items on Linux",                                         ["Linux"],                           ["no",        "no",       "yes",       "yes",      "yes",     "yes"],         null],
+    ["Exporting items on Windows, Mac OS",                               ["OR", "Windows", "MacOS"],          ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
+    ["Export includes attachments",                                      [],                                  ["unknown",   "unknown",  "no",        "no",       "no",      "no"],          null],
+    ["Responsive to bug reports and feature requests",                   [],                                  ["no",        "unknown",  "yes",       "no",       "no",      "unknown"],     null],
+    ["Open source",                                                      [],                                  ["no",        "no",       "yes",       "no",       "no",      "no"],          null],
+    ["Option to self-host",                                              ["SelfHosting"],                     ["poor",      "no",       "yes",       "no",       "no",      "no"],          null],
+    ["Users can delete own account (customer service not needed)",       ["Personal"],                        ["yes",       "yes",      "yes",       "yes",      "no",      "yes"],         null],
+    ["Admins can delete business account (customer service not needed)", ["Enterprise"],                      ["yes",       "yes",      "yes",       "no",       "no",      "yes"],         null],
+    ["Enterprise price per user per month",                              ["Enterprise"],                      [7.99,        4.00,       3.00,        6.00,       3.75,      3.60],          priceCompare],
+    ["Personal price per user per month (no Attachments or YubiKey)",    ["Personal"],                        [2.99,        4.99,       0.00,        2.00,       2.50,      0],             priceCompare],
+    ["Personal price per user per month (w/Attachments & YubiKey)",      ["Personal"],                        [2.99,        4.99,       0.84,        2.00,       2.50,      0],             priceCompare],
+    ["Has a useful status page that can be subscribed to",               [],                                  ["yes",       "yes",      "no",        "yes",      "no",      "yes"],         null],
+    ["Number of outages in the past six months",                         [],                                  [1,           12,         0,           12,         0,         2],             priceCompare],
 ];
 
 
@@ -140,6 +136,7 @@ function formatTable() {
     var wantFeatures = [];
     for (var i = 0; i < dataTags.length; i++) {
         var feature = dataTags[i];
+        if (feature == "OR") continue;
         var id = "feature" + feature;
         var checked;
         try {
@@ -166,12 +163,23 @@ function formatTable() {
     for (var i = 1; i < rawData.length; i++) {
         var tags = rawData[i][1];
         if (tags.length) {
-            var found = true;
-            for (var j = 0; j < tags.length; j++) {
-                if (! wantFeatures.includes(tags[j])) {
-                    found = false;
-                    break;
-                }
+            var found;
+            if (tags[0] == "OR") {
+                tags = tags.slice(1);
+                found = false;
+                for (var j = 0; j < wantFeatures.length; j++)
+                    if (tags.includes(wantFeatures[j])) {
+                        found = true;
+                        break;
+                    }
+            }
+            else {
+                found = true;
+                for (var j = 0; j < tags.length; j++)
+                    if (! wantFeatures.includes(tags[j])) {
+                        found = false;
+                        break;
+                    }
             }
             if (! found) continue;
         }
@@ -203,7 +211,7 @@ function formatTable() {
     t += featureList;
     t += "<p class='compare'><b>Add a comparison:</b> Compare ";
     t += "<select id='compare1' onchange='changeTable()'>\n";
-    t += "<option value=''></option>\n";
+    t += "<option value=''>(select)</option>\n";
     for (var i = 0; i < products.length; i++) {
         if (products[i] == compare2) continue;
         t += "<option value='" + products[i] + "'";
@@ -213,7 +221,7 @@ function formatTable() {
     t += "</select>\n";
     t += " to ";
     t += "<select id='compare2' onchange='changeTable()'>\n";
-    t += "<option value=''></option>\n";
+    t += "<option value=''>(select)</option>\n";
     for (var i = 0; i < products.length; i++) {
         if (products[i] == compare1) continue;
         t += "<option value='" + products[i] + "'";
@@ -226,11 +234,11 @@ function formatTable() {
     return t;
 }
 
-function changeTable() {
+function drawTable() {
     document.body.innerHTML = formatTable();
 }
 
-function drawTable() {
+function changeTable() {
     document.body.innerHTML = formatTable();
 }
 
