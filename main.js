@@ -1,4 +1,4 @@
-// Copyright (c) 2018 Quantopian Inc.
+// Copyright (c) 2018-2019 Quantopian Inc.
 //
 // Quantopian grants you the right to reuse this code in any private or public
 // context, in modified or unmodified form, as long as this copyright notice is
@@ -25,8 +25,8 @@ var rawData = [
     ["Linux command-line client",                                        ["Linux", "CLI"],                    ["poor",      "no",       "yes",       "poor",     "yes",     "no"],          null],
     ["Android support, including auto-fill",                             ["Android"],                         ["yes",       "yes",      "yes",       "yes",      "yes",     "poor"],        null],
     ["Android auto-fill in Chrome",                                      ["Android"],                         ["yes",       "yes",      "yes",       "yes",      "yes",     "no"],          null],
-    ["Auto-fill in Android work profile",                                ["Android", "Enterprise"],           ["yes",       "yes",      "no",        "yes",      "yes",     "yes"],         null],
-    ["Android auto-fill shows full usernames",                           ["Android"],                         ["yes",       "yes",      "yes",       "yes",      "no",      "no"],          null],
+    ["Auto-fill in Android work profile",                                ["Android", "Enterprise"],           ["yes",       "yes",      ["yes", "e"], "yes",     "yes",     "yes"],         null],
+    ["Android auto-fill shows full usernames",                           ["Android"],                         ["yes",       "yes",      "yes",       "yes",      "yes",     "no"],          null],
     ["iOS support, including auto-fill",                                 ["iOS"],                             ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
     ["Two-factor authentication",                                        [],                                  ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
     ["YubiKey support in browser (Enterprise)",                          ["Enterprise", "YubiKey"],           ["no",        "no",       "yes",       "yes",      "yes",     "no"],          null],
@@ -39,7 +39,7 @@ var rawData = [
     ["Import from LastPass",                                             ["LastPassMigration"],               ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
     ["LastPass import distinguishes work from personal items",           ["LastPassMigration", "Enterprise"], ["no",        "no",       "no",        "yes",      "no",      "no"],          null],
     ["Preserves LastPass folders in some way when importing",            ["LastPassMigration"],               ["yes",       "doubtful", "yes",       "yes",      "yes",     "yes"],         null],
-    ["Personal linked account support (or the equivalent)",              ["Enterprise"],                      ["yes",       "poor",     "yes",       "yes",      "no",      "no"],          null],
+    ["Personal linked account support (or the equivalent)",              ["Enterprise"],                      ["yes",       "poor",     "yes",       "yes",      ["poor", "d"], "no"],          null],
     ["Save location (personal vs. work) specified at creation time",     ["Enterprise"],                      ["yes",       "no",       "yes",       "yes",      "no",      "no"],          null],
     ["Save location (folder / collection / space) editable in web app",  [],                                  ["yes",       "no",       "yes",       "yes",      "yes",     "yes"],         null],
     ["Sensible password quality checks for master password",             [],                                  ["yes",       "no",       "yes",       "yes",      "yes",     "yes"],         null],
@@ -64,12 +64,13 @@ var rawData = [
     ["Auto-fill in browser can be disabled by preference",               [],                                  ["yes",       "no",       "yes",       "yes",      "yes",     "yes"],         null],
     ["Admins can reset passwords",                                       ["Enterprise"],                      ["yes",       "yes",      "no",        "yes",      "no",      "no"],          null],
     ["Admins can access other people's unshared credentials",            ["Enterprise"],                      ["yes",       "no",       "no",        "yes",      "yes",     "no"],          null],
-    ["Admins can reset other people's 2FA",                              ["Enterprise"],                      ["yes",       "no",       "no",        "yes",      "no",      "yes"],         null],
-    ["2FA can be enforced at the organization level",                    ["Enterprise"],                      ["no",        "no",       "no",        "yes",      "yes",     "yes"],         null],
-    ["2FA can be audited at the organization level",                     ["Enterprise"],                      ["yes",       "no",       "yes",       "yes",      "yes",     "no"],          null],
+    ["Admins can reset other people's 2fa",                              ["Enterprise"],                      ["yes",       "no",       "no",        "yes",      "no",      "yes"],         null],
+    ["2fa can be enforced at the organization level",                    ["Enterprise"],                      ["no",        "no",       ["no", "c"], "yes",      "yes",     "yes"],         null],
+    ["2fa can be audited at the organization level",                     ["Enterprise"],                      ["yes",       "no",       "yes",       "yes",      "yes",     "no"],          null],
     ["Exporting items on Linux",                                         ["Linux"],                           ["no",        "no",       "yes",       "yes",      "yes",     "yes"],         null],
     ["Exporting items on Windows, Mac OS",                               ["OR", "Windows", "MacOS"],          ["yes",       "yes",      "yes",       "yes",      "yes",     "yes"],         null],
-    ["Export includes attachments",                                      [],                                  ["unknown",   "unknown",  "no",        "no",       "no",      "no"],          null],
+    ["App export includes attachments",                                  [],                                  ["unknown",   "unknown",  "no",        "no",       "no",      "no"],          null],
+    ["CLI export includes attachments",                                  [],                                  ["no",        "no",       ["poor", "a"], ["poor", "a"], ["yes", "b"], "no"],  null],
     ["Responsive to bug reports and feature requests",                   [],                                  ["no",        "unknown",  "yes",       "no",       "no",      "unknown"],     null],
     ["Open source",                                                      [],                                  ["no",        "no",       "yes",       "no",       "no",      "no"],          null],
     ["Option to self-host",                                              ["SelfHosting"],                     ["poor",      "no",       "yes",       "no",       "no",      "no"],          null],
@@ -78,10 +79,17 @@ var rawData = [
     ["Enterprise price per user per month",                              ["Enterprise"],                      [7.99,        4.00,       3.00,        6.00,       3.75,      3.60],          priceCompare],
     ["Personal price per user per month (no Attachments or YubiKey)",    ["Personal"],                        [2.99,        4.99,       0.00,        2.00,       2.50,      0],             priceCompare],
     ["Personal price per user per month (w/Attachments & YubiKey)",      ["Personal"],                        [2.99,        4.99,       0.84,        2.00,       2.50,      0],             priceCompare],
-    ["Has a useful status page that can be subscribed to",               [],                                  ["yes",       "yes",      "no",        "yes",      "no",      "yes"],         null],
+    ["Has a useful status page that can be subscribed to",               [],                                  ["yes",       "yes",      "no",        "yes",      "yes",     "yes"],         null],
     ["Number of outages in the past six months",                         [],                                  [1,           12,         0,           12,         0,         2],             priceCompare],
 ];
 
+var notes = {
+    a: "CLI allows individual attachments to be exported. The user would have to write a script to iterate through and export all of them.",
+    b: "Attachments can be exported in Keepass format.",
+    c: "On the product roadmap, not yet implemented as of 2019-01-02.",
+    d: "You can share individual items or \"vaults\" (folders with distinct access control) between accounts, but there is no way to share the entire contents of one account with another. Alternatively, if you're a paying customer, the apps will remember multiple Keeper accounts and let you switch between them, which is better than nothing but not nearly as useful as being able to see your personal and work credentials at the same time.",
+    e: "In work profile apps Bitwarden might not pop up a dialog automatically inviting you to auto-fill, but it'll display a notification you can tap to do it.",
+};
 
 dataTags = [];
 for (var i = 1; i < rawData.length; i++) {
@@ -105,15 +113,39 @@ function priceCompare(n1, v1, n2, v2) {
     return v1 < v2 ? n1 : n2;
 }
 
+function getValue(v) {
+    if (Array.isArray(v))
+        return v[0];
+    return v;
+}
+
 function formatValue(v) {
+    v = getValue(v);
     if (v + 0 == v) return v;
     if (v == "yes") return "<span style='color: #0D8050'>" + v + "</span>";
     if (v == "no") return "<span style='color: #C23030'>" + v + "</span>";
     return "<span style='color: #BF7326;'>" + v + "</span>";
 }
 
+function formatNotes(v, current, mappings) {
+    if (! Array.isArray(v))
+        return "";
+    var foundNotes = [];
+    for (var i = 1; i < v.length; i++) {
+        if (! mappings[v[i]]) {
+            mappings[v[i]] = current[0];
+            current[0]++;
+        }
+        foundNotes.push("<sup>" + mappings[v[i]] + "</sup>");
+    }
+    return foundNotes.join(",");
+}
+
 function formatTable() {
     var compare1, compare2;
+    var currentNote = [1];
+    var noteMappings = {};
+
     try {
         compare1 = document.getElementById('compare1').value;
         compare2 = document.getElementById('compare2').value;
@@ -132,7 +164,7 @@ function formatTable() {
         }
     }
 
-    var featureList = "<h1>Password Manager Comparison</h1><p class='credits'>Inspired by the post from <a href='https://medium.com/@QuantopianCyber/head-to-head-evaluation-of-five-password-managers-8faa4851c767'>Jonathan Kamens of Quantopian Inc.</a></p><p class='features'><b>Toggle features you care about:</b>";
+    var featureList = "<h1>Password Manager Comparison</h1><p class='credits'>Inspired by the <a href='https://medium.com/@QuantopianCyber/head-to-head-evaluation-of-five-password-managers-8faa4851c767'>post from Jonathan Kamens of Quantopian Inc</a></p><p class='features'><b>Toggle features you care about:</b>";
     var wantFeatures = [];
     for (var i = 0; i < dataTags.length; i++) {
         var feature = dataTags[i];
@@ -155,12 +187,15 @@ function formatTable() {
     featureList += "</p>";
 
     t = "<div class='table-wrapper'><table>\n";
-    t += "<tr><th>" + rawData[0][0] + "</th>";
+
+    var header = "<tr><th>" + rawData[0][0] + "</th>";
     for (var i = 0; i < products.length; i++)
-        t += "<th>" + products[i] + "</th>";
-    if (comparing) t += "<th>" + compare1 + " vs. " + compare2 + "</th>\n";
-    t += "</tr>\n";
+        header += "<th>" + products[i] + "</th>";
+    if (comparing) header += "<th>" + compare1 + " vs. " + compare2 + "</th>\n";
+    header += "</tr>\n";
     for (var i = 1; i < rawData.length; i++) {
+        if (i % 20 == 1)
+            t += header;
         var tags = rawData[i][1];
         if (tags.length) {
             var found;
@@ -186,12 +221,14 @@ function formatTable() {
         t += "<tr><td>" + rawData[i][0] + "</td>";
         var values = rawData[i][2];
         for (var j = 0; j < values.length; j++)
-            t += "<td>" + formatValue(values[j]) + "</td>";
+            t += "<td>" + formatValue(values[j]) +
+            formatNotes(values[j], currentNote, noteMappings) + "</td>";
         if (comparing) {
             var cmp;
             if (! (cmp = rawData[i][3]))
                 cmp = yesNoCompare
-            winner = cmp(compare1, values[index1], compare2, values[index2]);
+            winner = cmp(compare1, getValue(values[index1]),
+                         compare2, getValue(values[index2]));
             if (winner == compare1) score1++;
             else if (winner == compare2) score2++;
             t += "<td>" + winner + "</td>";
@@ -231,6 +268,18 @@ function formatTable() {
     t += "</select>\n";
     t += "</p>\n";
     t += "</form>\n";
+    t += "<div class='notes'>\n";
+    if (currentNote[0] > 1) {
+        t += "<hr/>\n";
+        reverseMappings = [];
+        for (var key = 'a'; noteMappings[key];
+             key = String.fromCharCode(key.charCodeAt(0) + 1))
+            reverseMappings[noteMappings[key]] = key;
+        for (var i = 1; i < currentNote[0]; i++)
+            t += "<p><sup>" + i + "</sup>" + notes[reverseMappings[i]] +
+                "</p>\n";
+    }
+    t += "</div>\n";
     return t;
 }
 
