@@ -364,3 +364,7 @@ var passwordManagerTable = function() {
 
   onLoad();
 }
+
+// Local variables:
+// js-indent-level: 2
+// End:
