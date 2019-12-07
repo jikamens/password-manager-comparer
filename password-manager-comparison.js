@@ -71,7 +71,8 @@ var passwordManagerTable = function() {
     ["Nested folders in web app",                                        [],                                  ["no",        "no",       "yes",       "yes",      "yes",     "poor",       "yes"],      null],
     ["Nested folders in browser",                                        [],                                  ["no",        "no",       "yes",       "yes",      "yes",     "poor",       "yes"],      null],
     ["Nested folders in desktop app",                                    [],                                  ["yes",       "no",       "yes",       "yes",      "yes",     "poor",       "yes"],      null],
-    ["Can copy stored items",                                            [],                                  [["poor", "k"], "no",     "no",        "yes",      "no",      "yes",        "yes"],      null],
+    ["Can copy stored items on Linux",                                   ["Linux"],                           ["no",        "no",       "no",        "yes",      "no",      "yes",        "yes"],      null],
+    ["Can copy stored items on Windows, Mac OS",                         ["OR", "Windows", "MacOS"],          ["yes",       "no",       "no",        "yes",      "no",      "yes",        "yes"],      null],
     ["Can 'unshare' shared item",                                        [],                                  ["yes",       "yes",      "no",        "yes",      "yes",     "yes",        "yes"],      null],
     ["Resists auto-filling invisible forms",                             [],                                  ["yes",       "yes",      "yes",       "no",       "yes",     "unknown",    "unknown"],  null],
     ["Browser plugin only fills selected form",                          [],                                  ["no",        "unknown",  "no",        "no",       "unknown", "yes",        "unknown"],  null],
@@ -113,7 +114,6 @@ var passwordManagerTable = function() {
     h: "Paid annually. Price goes down for multi-year subscriptions. There is a free version but it's not worth considering given that it doesn't sync into the cloud or between devices.",
     i: "Actually RoboForm doesn't support attachments or YubiKeys (see above), so if you care about those features, the price quoted here is irrelevant. :-/",
     j: "There's no built-in bulk export on Linux, but you can write a script to do it with the CLI.",
-    k: "Items can be copied between vaults, but duplicating an item within a vault is not supported.",
   };
 
   var dataTags = [];
