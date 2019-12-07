@@ -306,7 +306,8 @@ var passwordManagerTable = function() {
     }
 
     if (comparing) {
-      t += "<tr><th align=left colspan='" + (products.length + 1) +
+      t += "<tr><th align=left colspan='" +
+        (products.length + 2 - excluded.length) +
         "'>Score:</th>";
       t += "<th align=left>" + compare1 + " - " + score1 + "<br/>" +
         compare2 + " - " + score2 + "</th></tr>\n";
