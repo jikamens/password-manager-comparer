@@ -72,6 +72,7 @@ var passwordManagerTable = function() {
     ["Nested folders in browser",                                        [],                                  ["no",        "no",       "yes",       "yes",      "yes",     "poor",       "yes"],      null],
     ["Nested folders in desktop app",                                    [],                                  ["yes",       "no",       "yes",       "yes",      "yes",     "poor",       "yes"],      null],
     ["Can copy stored items",                                            [],                                  [["poor", "k"], "no",     "no",        "yes",      "no",      "yes",        "yes"],      null],
+    ["Can 'unshare' shared item",                                        [],                                  ["yes",       "yes",      "no",        "yes",      "yes",     "yes",        "yes"],      null],
     ["Resists auto-filling invisible forms",                             [],                                  ["yes",       "yes",      "yes",       "no",       "yes",     "unknown",    "unknown"],  null],
     ["Browser plugin only fills selected form",                          [],                                  ["no",        "unknown",  "no",        "no",       "unknown", "yes",        "unknown"],  null],
     ["Browser plugin displays icon in form fields",                      [],                                  ["yes",       "yes",      "no",        "yes",      "yes",     "yes",        "no"],       null],
