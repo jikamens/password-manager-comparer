@@ -79,7 +79,7 @@ var passwordManagerTable = function() {
     ["Browser plugin displays icon in form fields",                      [],                                  ["yes",       "yes",      "no",        "yes",      "yes",     "yes",        "no"],       null],
     ["Browser plugin prompts to save new sites on Linux",                ["Linux"],                           ["yes",       "yes",      "yes",       "yes",      "yes",     "yes",        "yes"],      null],
     ["Browser plugin prompts to save new sites on Windows, macOS",       ["OR", "Windows", "macOS"],          ["yes",       "yes",      "yes",       "yes",      "yes",     "yes",        "yes"],      null],
-    ["2FA integrated into login entries in vault",                       [],                                  ["yes",       "no",       "yes",       "no",       "yes",     "no",         "no"],       null],
+    ["2FA integrated into login entries in vault",                       [],                                  ["yes",       "yes",      "yes",       "no",       "yes",     "no",         "no"],       null],
     ["Auto-fill in browser disabled by default",                         [],                                  ["yes",       "no",       "yes",       "no",       "yes",     "yes",        "yes"],      null],
     ["Auto-fill in browser can be disabled by preference",               [],                                  ["yes",       "no",       "yes",       "yes",      "yes",     "yes",        "yes"],      null],
     ["Admins can reset passwords",                                       ["Enterprise"],                      ["yes",       "yes",      "no",        "yes",      "no",      "no",         "no"],       null],
