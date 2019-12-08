@@ -82,9 +82,9 @@ var passwordManagerTable = function() {
     ["2FA integrated into login entries in vault",                       [],                                  ["yes",       "yes",      "yes",       "no",       "yes",     "no",         "no"],       null],
     ["Auto-fill in browser disabled by default",                         [],                                  ["yes",       "no",       "yes",       "no",       "yes",     "yes",        "yes"],      null],
     ["Auto-fill in browser can be disabled by preference",               [],                                  ["yes",       "no",       "yes",       "yes",      "yes",     "yes",        "yes"],      null],
-    ["Admins can reset passwords",                                       ["Enterprise"],                      ["yes",       "yes",      "no",        "yes",      "no",      "no",         "no"],       null],
+    ["Admins can reset passwords",                                       ["Enterprise"],                      ["yes",       "yes",      "no",        "yes",      ["no", "m"], "no",       "no"],       null],
+    ["Admins can reset other people's 2fa",                              ["Enterprise"],                      ["yes",       "no",       "no",        "yes",      ["no", "m"], "yes",      "no"],       null],
     ["Admins can access other people's unshared credentials",            ["Enterprise"],                      ["yes",       "no",       "no",        "yes",      "yes",     "no",         "no"],       null],
-    ["Admins can reset other people's 2fa",                              ["Enterprise"],                      ["yes",       "no",       "no",        "yes",      "no",      "yes",        "no"],       null],
     ["2fa can be enforced at the organization level",                    ["Enterprise"],                      ["yes",       "no",       ["no", "c"], "yes",      "yes",     "yes",        "yes"],      null],
     ["2fa can be audited at the organization level",                     ["Enterprise"],                      ["yes",       "no",       "yes",       "yes",      "yes",     "no",         "no"],       null],
     ["Exporting items on Linux",                                         ["Linux"],                           [["poor", "j"], "no",     "yes",       "yes",      "yes",     "yes",        "no"],       null],
@@ -115,6 +115,7 @@ var passwordManagerTable = function() {
     i: "Actually RoboForm doesn't support attachments or YubiKeys (see above), so if you care about those features, the price quoted here is irrelevant. :-/",
     j: "There's no built-in bulk export on Linux, but you can write a script to do it with the CLI.",
     k: "LastPass's YubiKey support uses YubiCo's proprietary OTP protocol rather than the more secure U2F (a.k.a., FIDO2, WebAuthn) that the other password managers use. It's probably good enough, but this is nevertheless an important distinction.",
+    m: "This functionality is on Keeper's roadmap and expected to be delivered early in 2020.",
   };
 
   var dataTags = [];
