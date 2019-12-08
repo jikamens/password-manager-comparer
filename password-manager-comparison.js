@@ -44,7 +44,7 @@ var passwordManagerTable = function() {
     ["YubiKey support in browser (Enterprise)",                          ["Enterprise", "YubiKey"],           ["yes",       "no",       "yes",       "yes",      "yes",     "no",         "no"],       null],
     ["YubiKey support in browser (Personal)",                            ["Personal", "YubiKey"],             ["yes",       "no",       "yes",       "yes",      "yes",     "no",         "no"],       null],
     ["YubiKey support in Android",                                       ["Android", "YubiKey"],              ["no",        "no",       "no",        "yes",      "no",      "no",         "no"],       null],
-    ["YubiKey support in iOS (NFC)",                                     ["iOS", "YubiKey"],                  ["no",        "no",       "no",        "no",       "no",      "no",         "no"],       null],
+    ["YubiKey support in iOS (NFC)",                                     ["iOS", "YubiKey"],                  ["no",        "no",       "no",        "yes",      "no",      "no",         "no"],       null],
     ["YubiKey support in iOS (Lightning)",                               ["iOS", "YubiKey"],                  ["yes",       "no",       "no",        "yes",      "yes",     "no",         "no"],       null],
     ["Saved password in Android, iOS",                                   ["OR", "Android", "iOS"],            ["yes",       "yes",      "yes",       "yes",      "yes",     "yes",        "yes"],      null],
     ["Fingerprint login in Android, iOS",                                ["OR", "Android", "iOS"],            ["yes",       "yes",      "yes",       "yes",      "yes",     "yes",        "yes"],      null],
