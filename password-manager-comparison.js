@@ -95,7 +95,7 @@ var passwordManagerTable = function() {
     ["CLI export includes attachments",                                  [],                                  [["poor", "a"], "no",     ["poor", "a"], ["poor", "a"], ["yes", "b"], "no", "no"],       null],
     ["Responsive to bug reports and feature requests",                   [],                                  ["no",        "unknown",  "yes",       "no",       "no",      "unknown",    "unknown"],  null],
     ["Open source",                                                      [],                                  ["no",        "no",       "yes",       "no",       "no",      "no",         "no"],       null],
-    ["Option to self-host",                                              ["SelfHosting"],                     ["poor",      "no",       "yes",       "no",       "no",      "no",         "no"],       null],
+    ["Option to self-host",                                              [],                                  ["poor",      "no",       "yes",       "no",       "no",      "no",         "no"],       null],
     ["Users can delete own account (customer service not needed)",       ["Personal"],                        ["yes",       "yes",      "yes",       "yes",      "no",      "yes",        "yes"],      null],
     ["Admins can delete business account (customer service not needed)", ["Enterprise"],                      ["yes",       "yes",      "yes",       "no",       "no",      "yes",        "no"],       null],
     ["Enterprise price per user per month",                              ["Enterprise"],                      [7.99,        4.00,       3.00,        6.00,       3.75,      3.60,         [3.33, "g"]], priceCompare],
