@@ -82,6 +82,8 @@ var passwordManagerTable = function() {
     ["2FA integrated into login entries in vault",                       [],                                  ["yes",       "yes",      "yes",       "no",       "yes",     "no",         "no"],       null],
     ["Auto-fill in browser disabled by default",                         [],                                  ["yes",       "no",       "yes",       "no",       "yes",     "yes",        "yes"],      null],
     ["Auto-fill in browser can be disabled by preference",               [],                                  ["yes",       "no",       "yes",       "yes",      "yes",     "yes",        "yes"],      null],
+    ["Lost master password recoverable without losing data in Enterprise", ["Enterprise"],                    ["yes",       ["yes", "l"], "no",      "yes",      "yes",     "no",         "no"],       null],
+    ["Lost 2fa recoverable without losing data in Enterprise",           ["Enterprise"],                      ["yes",       ["yes", "l"], "no",      "yes",      "yes",     "yes",        "no"],       null],
     ["Admins can reset passwords",                                       ["Enterprise"],                      ["yes",       "yes",      "no",        "yes",      ["no", "m"], "no",       "no"],       null],
     ["Admins can reset other people's 2fa",                              ["Enterprise"],                      ["yes",       "no",       "no",        "yes",      ["no", "m"], "yes",      "no"],       null],
     ["Admins can access other people's unshared credentials",            ["Enterprise"],                      ["yes",       "no",       "no",        "yes",      "yes",     "no",         "no"],       null],
@@ -115,6 +117,7 @@ var passwordManagerTable = function() {
     i: "Actually RoboForm doesn't support attachments or YubiKeys (see above), so if you care about those features, the price quoted here is irrelevant. :-/",
     j: "There's no built-in bulk export on Linux, but you can write a script to do it with the CLI.",
     k: "LastPass's YubiKey support uses YubiCo's proprietary OTP protocol rather than the more secure U2F (a.k.a., FIDO2, WebAuthn) that the other password managers use. It's probably good enough, but this is nevertheless an important distinction.",
+    l: "You can use backup codes or your backup telephone number to recover from a lost 2fa device. If you didn't save backup codes and you didn't set up a recovery phone number or it has changed, then you may be out of luck, or you may be able to contact Dashlane support and ask them to disable your 2fa.",
     m: "This functionality is on Keeper's roadmap and expected to be delivered early in 2020.",
   };
 
