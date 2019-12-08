@@ -41,11 +41,11 @@ var passwordManagerTable = function() {
     ["iOS support, including auto-fill",                                 ["iOS"],                             ["yes",       "yes",      "yes",       "yes",      "yes",     "yes",        "yes"],      null],
     ["Free two-factor authentication",                                   [],                                  ["yes",       "yes",      "yes",       "yes",      "yes",     "yes",        "no"],       null],
     ["Paid two-factor authentication",                                   [],                                  ["yes",       "yes",      "yes",       "yes",      "yes",     "yes",        "yes"],      null],
-    ["YubiKey support in browser (Enterprise)",                          ["Enterprise", "YubiKey"],           ["yes",       "no",       "yes",       "yes",      "yes",     "no",         "no"],       null],
-    ["YubiKey support in browser (Personal)",                            ["Personal", "YubiKey"],             ["yes",       "no",       "yes",       "yes",      "yes",     "no",         "no"],       null],
-    ["YubiKey support in Android",                                       ["Android", "YubiKey"],              ["no",        "no",       "no",        "yes",      "no",      "no",         "no"],       null],
-    ["YubiKey support in iOS (NFC)",                                     ["iOS", "YubiKey"],                  ["no",        "no",       "no",        "yes",      "no",      "no",         "no"],       null],
-    ["YubiKey support in iOS (Lightning)",                               ["iOS", "YubiKey"],                  ["yes",       "no",       "no",        "yes",      "yes",     "no",         "no"],       null],
+    ["YubiKey support in browser (Enterprise)",                          ["Enterprise", "YubiKey"],           ["yes",       "no",       "yes",       ["yes", "k"], "yes",   "no",         "no"],       null],
+    ["YubiKey support in browser (Personal)",                            ["Personal", "YubiKey"],             ["yes",       "no",       "yes",       ["yes", "k"], "yes",   "no",         "no"],       null],
+    ["YubiKey support in Android",                                       ["Android", "YubiKey"],              ["no",        "no",       "no",        ["yes", "k"], "no",    "no",         "no"],       null],
+    ["YubiKey support in iOS (NFC)",                                     ["iOS", "YubiKey"],                  ["no",        "no",       "no",        ["yes", "k"], "no",    "no",         "no"],       null],
+    ["YubiKey support in iOS (Lightning)",                               ["iOS", "YubiKey"],                  ["yes",       "no",       "no",        ["yes", "k"], "yes",   "no",         "no"],       null],
     ["Saved password in Android, iOS",                                   ["OR", "Android", "iOS"],            ["yes",       "yes",      "yes",       "yes",      "yes",     "yes",        "yes"],      null],
     ["Fingerprint login in Android, iOS",                                ["OR", "Android", "iOS"],            ["yes",       "yes",      "yes",       "yes",      "yes",     "yes",        "yes"],      null],
     ["Free synchronization across devices",                              [],                                  ["yes",       "yes",      "yes",       "yes",      "yes",     "yes",        "no"],       null],
@@ -114,6 +114,7 @@ var passwordManagerTable = function() {
     h: "Paid annually. Price goes down for multi-year subscriptions. There is a free version but it's not worth considering given that it doesn't sync into the cloud or between devices.",
     i: "Actually RoboForm doesn't support attachments or YubiKeys (see above), so if you care about those features, the price quoted here is irrelevant. :-/",
     j: "There's no built-in bulk export on Linux, but you can write a script to do it with the CLI.",
+    k: "LastPass's YubiKey support uses YubiCo's proprietary OTP protocol rather than the more secure U2F (a.k.a., FIDO2, WebAuthn) that the other password managers use. It's probably good enough, but this is nevertheless an important distinction.",
   };
 
   var dataTags = [];
