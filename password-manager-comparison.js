@@ -93,7 +93,6 @@ var passwordManagerTable = function() {
     ["Exporting items on Windows, macOS",                                ["OR", "Windows", "macOS"],          ["yes",       "yes",      "yes",       "yes",      "yes",     "yes",        "yes"],      null],
     ["App export includes attachments",                                  [],                                  ["no",        "unknown",  "no",        "no",       "no",      "no",         "yes"],      null],
     ["CLI export includes attachments",                                  [],                                  [["poor", "a"], "no",     ["poor", "a"], ["poor", "a"], ["yes", "b"], "no", "no"],       null],
-    ["Responsive to bug reports and feature requests",                   [],                                  ["no",        "unknown",  "yes",       "no",       "no",      "unknown",    "unknown"],  null],
     ["Open source",                                                      [],                                  ["no",        "no",       "yes",       "no",       "no",      "no",         "no"],       null],
     ["Option to self-host",                                              [],                                  ["poor",      "no",       "yes",       "no",       "no",      "no",         "no"],       null],
     ["Users can delete own account (customer service not needed)",       ["Personal"],                        ["yes",       "yes",      "yes",       "yes",      "no",      "yes",        "yes"],      null],
