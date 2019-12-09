@@ -89,6 +89,7 @@ var passwordManagerTable = function() {
     ["Admins can access other people's unshared credentials",            ["Enterprise"],                      ["yes",       "no",       "no",        "yes",      "yes",     "no",         "no"],       null],
     ["2fa can be enforced at the organization level",                    ["Enterprise"],                      ["yes",       "no",       ["no", "c"], "yes",      "yes",     "yes",        "yes"],      null],
     ["2fa can be audited at the organization level",                     ["Enterprise"],                      ["yes",       "no",       "yes",       "yes",      "yes",     "no",         "no"],       null],
+    ["Enterprise SAML single sign-on (SSO)",                             ["Enterprise"],                      ["no",        "no",       "no",        "no",       "yes",     "no",         "no"],       null],
     ["Exporting items on Linux",                                         ["Linux"],                           [["poor", "j"], "no",     "yes",       "yes",      "yes",     "yes",        "no"],       null],
     ["Exporting items on Windows, macOS",                                ["OR", "Windows", "macOS"],          ["yes",       "yes",      "yes",       "yes",      "yes",     "yes",        "yes"],      null],
     ["App export includes attachments",                                  [],                                  ["no",        "unknown",  "no",        "no",       "no",      "no",         "yes"],      null],
