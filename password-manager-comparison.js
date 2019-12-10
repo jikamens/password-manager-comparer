@@ -74,6 +74,7 @@ var passwordManagerTable = function() {
     ["Can copy stored items on Linux",                                   ["Linux"],                           ["no",        "no",       "no",        "yes",      "yes",     "yes",        "yes"],      null],
     ["Can copy stored items on Windows, macOS",                          ["OR", "Windows", "macOS"],          ["yes",       "no",       "no",        "yes",      "yes",     "yes",        "yes"],      null],
     ["Can 'unshare' shared item",                                        [],                                  ["yes",       "yes",      "no",        "yes",      "yes",     "yes",        "yes"],      null],
+    ["Keyboard shortcuts for auto-filling in browser",                   [],                                  ["yes",       "no",       "yes",       "yes",      "no",      "no",         ["partial","q"]],null],
     ["Resists auto-filling invisible forms",                             [],                                  ["yes",       "yes",      "yes",       "no",       "yes",     "unknown",    "unknown"],  null],
     ["Browser plugin only fills selected form",                          [],                                  ["no",        "unknown",  "no",        "no",       "unknown", "yes",        "unknown"],  null],
     ["Browser plugin displays icon in form fields",                      [],                                  ["yes",       "yes",      "no",        "yes",      "yes",     "yes",        "no"],       null],
@@ -122,6 +123,7 @@ var passwordManagerTable = function() {
     n: "Bitwarden supports both the more secure U2F and the less secure Yubico OTP in the browser, but if you want to you want to use your YubiKey with Bitwarden on Android or iOS, you will have to use Yubico OTP there. Bitwarden does not yet support U2F on Android or iOS, but it is in development.",
     o: "Self-hosted enterprise customers can recover users from lost 2fa without losing data, but generally speaking I assume most customers will not self-host, so the answer in the grid here is for Bitwarden's cloud offering.",
     p: "The Bitwarden team says this is currently in development.",
+    q: "The RoboForm manual says keyboard shortcuts are only supported in Internet Explorer.",
   };
 
   var dataTags = [];
