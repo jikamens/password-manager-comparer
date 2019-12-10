@@ -43,7 +43,7 @@ var passwordManagerTable = function() {
     ["Paid two-factor authentication",                                   [],                                  ["yes",       "yes",      "yes",       "yes",      "yes",     "yes",        "yes"],      null],
     ["YubiKey support in browser (Enterprise)",                          ["Enterprise", "YubiKey"],           ["yes",       "no",       "yes",       ["yes", "k"], "yes",   "no",         "no"],       null],
     ["YubiKey support in browser (Personal)",                            ["Personal", "YubiKey"],             ["yes",       "no",       "yes",       ["yes", "k"], "yes",   "no",         "no"],       null],
-    ["YubiKey support in Android",                                       ["Android", "YubiKey"],              ["no",        "no",       "no",        ["yes", "k"], "no",    "no",         "no"],       null],
+    ["YubiKey support in Android",                                       ["Android", "YubiKey"],              ["no",        "no",       ["yes", "n"],["yes", "k"], "no",    "no",         "no"],       null],
     ["YubiKey support in iOS (NFC)",                                     ["iOS", "YubiKey"],                  ["no",        "no",       "no",        ["yes", "k"], "no",    "no",         "no"],       null],
     ["YubiKey support in iOS (Lightning)",                               ["iOS", "YubiKey"],                  ["yes",       "no",       "no",        ["yes", "k"], "yes",   "no",         "no"],       null],
     ["Saved password in Android, iOS",                                   ["OR", "Android", "iOS"],            ["yes",       "yes",      "yes",       "yes",      "yes",     "yes",        "yes"],      null],
@@ -119,6 +119,7 @@ var passwordManagerTable = function() {
     k: "LastPass's YubiKey support uses YubiCo's proprietary OTP protocol rather than the more secure U2F (a.k.a., FIDO2, WebAuthn) that the other password managers use. It's probably good enough, but this is nevertheless an important distinction.",
     l: "You can use backup codes or your backup telephone number to recover from a lost 2fa device. If you didn't save backup codes and you didn't set up a recovery phone number or it has changed, then you may be out of luck, or you may be able to contact Dashlane support and ask them to disable your 2fa.",
     m: "This functionality is on Keeper's roadmap and expected to be delivered early in 2020.",
+    n: "NFC-based YubiKey Neo confirmed. Unsure about direct USB (i.e. USB Type C) models. Bitwarden supports both the more secure U2F and the less secure Yubico OTP in the browser, but if you want to you want to use your YubiKey with Bitwarden on Android, you will have to use Yubico OTP there; Bitwarden does not yet support U2F on Android."
   };
 
   var dataTags = [];
