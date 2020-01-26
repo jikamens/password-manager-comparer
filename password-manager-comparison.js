@@ -75,6 +75,8 @@ var passwordManagerTable = function() {
     ["Can copy stored items on Windows, macOS",                          ["OR", "Windows", "macOS"],          ["yes",       "no",       "no",        "yes",      "yes",     "yes",        "yes"],      null],
     ["Can 'unshare' shared item",                                        [],                                  ["yes",       "yes",      "no",        "yes",      "yes",     "yes",        "yes"],      null],
     ["Keyboard shortcuts for auto-filling in browser",                   [],                                  ["yes",       "no",       "yes",       "yes",      "no",      "no",         ["partial","q"]],null],
+    ["Password generator in browser can be accessed directly (not inside a vault entry or login form)",
+                                                                         [],                                  ["yes",       "yes",      "yes",       "yes",      "no",      "yes",        "yes"],      null],
     ["Resists auto-filling invisible forms",                             [],                                  ["yes",       "yes",      "yes",       "no",       "yes",     "unknown",    "unknown"],  null],
     ["Browser plugin only fills selected form",                          [],                                  ["no",        "unknown",  "no",        "no",       "unknown", "yes",        "unknown"],  null],
     ["Browser plugin displays icon in form fields",                      [],                                  ["yes",       "yes",      "no",        "yes",      "yes",     "yes",        "no"],       null],
