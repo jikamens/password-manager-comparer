@@ -77,6 +77,7 @@ var passwordManagerTable = function() {
     ["Keyboard shortcuts for auto-filling in browser",                   [],                                  ["yes",       "no",       "yes",       "yes",      "no",      "no",         ["partial","q"]],null],
     ["Password generator in browser can be accessed directly (not inside a vault entry or login form)",
                                                                          [],                                  ["yes",       "yes",      "yes",       "yes",      "no",      "yes",        "yes"],      null],
+    ["Browser menu shows matching vault entries for current site",       [],                                  ["yes",       ["poor", "r"], "yes",    "yes",      "no",      "yes",        "yes"],      null],
     ["Resists auto-filling invisible forms",                             [],                                  ["yes",       "yes",      "yes",       "no",       "yes",     "unknown",    "unknown"],  null],
     ["Browser plugin only fills selected form",                          [],                                  ["no",        "unknown",  "no",        "no",       "unknown", "yes",        "unknown"],  null],
     ["Browser plugin displays icon in form fields",                      [],                                  ["yes",       "yes",      "no",        "yes",      "yes",     "yes",        "no"],       null],
@@ -126,6 +127,7 @@ var passwordManagerTable = function() {
     o: "Self-hosted enterprise customers can recover users from lost 2fa without losing data, but generally speaking I assume most customers will not self-host, so the answer in the grid here is for Bitwarden's cloud offering.",
     p: "The Bitwarden team says this is currently in development.",
     q: "The RoboForm manual says keyboard shortcuts are only supported in Internet Explorer.",
+    r: "There is a \"This website\" tab in the browser menu, but it doesn't appear to work, at least not well. When I create a vault entry for a site and then browse to the login page for that site and select the \"This website\" tab, the vault entry I just created does not show up.",
   };
 
   var dataTags = [];
