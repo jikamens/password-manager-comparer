@@ -108,7 +108,7 @@
     ["Enterprise price per user per month",                              ["Enterprise"],                      [7.99,        4.00,       3.00,        6.00,       3.75,      3.60,         [3.33, "g"]], priceCompare],
     ["Personal price per user per month (no Attachments or YubiKey)",    ["Personal"],                        [2.99,        4.99,       0.00,        2.00,       2.50,      0,            [1.99, "h"]], priceCompare],
     ["Personal price per user per month (w/Attachments & YubiKey)",      ["Personal"],                        [2.99,        4.99,       0.84,        2.00,       2.50,      0,            [1.99, "i"]], priceCompare],
-    ["Has a useful status page that can be subscribed to",               [],                                  ["yes",       "yes",      "no",        "yes",      "yes",     "yes",        "no"],       null],
+    ["Has a useful status page that can be subscribed to",               [],                                  ["yes",       "yes",      "yes",        "yes",      "yes",     "yes",        "no"],       null],
     ["Number of outages in the past six months",                         [],                                  [1,           12,         0,           12,         0,         2,            "unknown"],  outagesCompare],
   ];
   var notes = {
