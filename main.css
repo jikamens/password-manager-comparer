@@ -1,0 +1,117 @@
+body {
+  display: flex;
+  flex-direction: column;
+  max-width: 850px;
+  margin: auto;
+  padding: 30px 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: #10161A;
+  line-height: 1.4;
+}
+
+form {
+  order: 1;
+}
+
+h1 {
+  margin: 0;
+  line-height: 1.1;
+}
+
+a {
+  color: #106BA3;
+}
+
+p {
+  position: relative;
+}
+
+a:hover,
+a:focus{
+  text-decoration: none;
+}
+
+select {
+  font-size: medium;
+  margin: 0 5px;
+  background: #fff;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-top: 20px;
+  order: 2;
+}
+
+table {
+  border-collapse: collapse;
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+tr:nth-child(even) {
+  background: #F5F8FA;
+}
+
+th, td {
+  padding: 6px 8px;
+  border: 1px solid #CED9E0;
+}
+
+th {
+  white-space: nowrap;
+  text-align: left;
+  background: #CED9E0;
+}
+
+td {
+  border-color: #E1E8ED;
+}
+
+sup {
+  left: 3px;
+  position: relative;
+}
+
+p sup {
+  left: -15px;
+  position: absolute;
+  font-size: 14px;
+}
+
+hr {
+  display: none;
+}
+
+.notes {
+  order: 3;
+  font-size: 14px;
+  margin-left: 15px;
+}
+
+.features, .compare {
+  padding: 8px 15px 10px;
+  background: #F5F8FA;
+  border: 1px solid #E1E8ED;
+  border-radius: 2px;
+  line-height: 1.8;
+}
+
+.features span {
+  margin-right: 10px;
+}
+
+.features b {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.credits {
+  margin: 5px 0 30px;
+  font-size: 14px;
+}
+
+input[type='checkbox'] {
+  font-size: large;
+  vertical-align: text-bottom;
+}
