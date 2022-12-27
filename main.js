@@ -213,7 +213,7 @@ function formatTable() {
         }
     }
 
-    var featureList = "<h1>Password Manager Comparison</h1><p class='credits'>Inspired by the <a href='https://medium.com/@QuantopianCyber/head-to-head-evaluation-of-five-password-managers-8faa4851c767'>post from Jonathan Kamens of Quantopian Inc</a></p><p class='features'><b>Toggle features you care about:</b>";
+    var featureList = "<h1>Password Manager Comparison</h1> <a href='./contributors.html'>contributors</a> <p class='features'><b>Toggle features you care about:</b>";
     var wantFeatures = [];
     for (var i = 0; i < dataTags.length; i++) {
         var feature = dataTags[i];
@@ -332,16 +332,12 @@ function formatTable() {
     return t;
 }
 
-function drawTable() {
-    document.body.innerHTML = formatTable();
-}
-
 function changeTable() {
-    document.body.innerHTML = formatTable();
+  document.body.innerHTML = formatTable();
 }
 
 function onLoad() {
-    drawTable();
+    changeTable();
 }
 
 // Local variables:
